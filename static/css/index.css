@@ -1,0 +1,113 @@
+@media (min-width: 100px) and (max-width: 900px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        background-color: #e1d9d9;
+    }
+
+    header {
+        background-color: #e1d9d9;
+        padding: 20px;
+    }
+
+    /* Style for the top bar with menu and notifications icons */
+    .top-bar {
+        height: 26px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #e5e0e0;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .top-bar .site-icon a {
+        color: black;
+        font-size: large;
+        font-weight: bold;
+        text-decoration: none;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .top-bar .profile-icon i {
+        color: black;
+        font-size: x-large;
+    }
+
+    .container {
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .container .about .logo {
+        border: 2px dotted darkblue;
+        margin-top: 25px;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+    }
+
+    .container .about h3 {
+        margin-top: 1px;
+        text-align: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    .container p {
+        margin-top: 30px;
+        align-items: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container form input {
+        align-items: center;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container form button {
+        background-color: rgb(15, 170, 242);
+        align-items: center;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+        padding: 8px;
+        font-size: medium;
+        font-weight: bold;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .container .image {
+        margin-top: 25px;
+    }
+
+    .container .buttons {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-around;
+        margin: 40px;
+    }
+
+
+    .container button {
+        background-color: rgb(15, 170, 242);
+        align-items: center;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+        padding: 8px;
+        font-size: medium;
+        font-weight: bold;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}

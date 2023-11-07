@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>SimpleQRs - Generate QR Code</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <!-- The navbar -->
+        <div class="top-bar">
+            <div class="site-icon">
+                <a href="">SimpleQRs</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="about">
+            <img class="logo" src="static/img/logo.jpeg" alt= "QR Code">
+            <h3>SimpleQRs</h3>
+        </div>
+
+
+        <p>Create a QR code by inputting a link or text into the form provided below.</p>
+        <form method="POST">
+            <label for="qr_text"></label>
+            <input type="text" name="qr_text" id="qr_text" required placeholder="Text or Link">
+            <button type="submit">Generate Code</button>
+        </form>
+
+        {% if qr_code %}
+        <div class="image">
+            <img src="{{ qr_code }}" alt="QR Code">
+        </div>
+        <div class="buttons">
+            <div class="share">
+                <button type="button" onclick="shareQRCodeAsImage()">Share as Image</button>
+            </div>
+
+            <div class="download">
+                <button type="submit"><i class="fa-solid fa-cloud-arrow-down"></i> Download</button>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+    <script>
+        function shareQRCodeAsImage() {
+            const qrCodeImageURL = '{{ url_for("static", filename="qr_code.png") }}';
+            const shareData = {
+                title: 'QR Code',
+                text: 'Check out this QR code!',
+                url: qrCodeImageURL,
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((error) => console.error('Sharing failed', error));
+            } else {
+                console.log('Web Share API not supported');
+            }
+        }
+    </script>
+    
+</body>
+</html>
